@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>محرك فرص اعتماد</title>
+<style>
+:root{--bg:#f5f6f7;--tx:#111b24;--mu:#5d6975;--rule:#d3d9df;--money:#0a6a4d;--amber:#a85a00;--hover:#eaeef1;--inv:#111b24;--invt:#f5f6f7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1419;--tx:#e8edf1;--mu:#8f9ba6;--rule:#27313a;--money:#5fd3a4;--amber:#f0b35c;--hover:#161e25;--inv:#e8edf1;--invt:#0e1419}}
+:root[data-theme="dark"]{--bg:#0e1419;--tx:#e8edf1;--mu:#8f9ba6;--rule:#27313a;--money:#5fd3a4;--amber:#f0b35c;--hover:#161e25;--inv:#e8edf1;--invt:#0e1419}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Thmanyah Sans","thmanyah","Thmanyah Serif Text","Segoe UI",Tahoma,"Noto Sans Arabic",Arial,sans-serif;line-height:1.75;font-size:15px;font-variant-numeric:tabular-nums}
+.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+.side{padding:28px 22px;border-inline-end:1px solid var(--rule);position:sticky;top:0;align-self:start;height:100vh;overflow:auto}
+.brand b{display:block;font-size:22px;line-height:1.25;letter-spacing:-.01em}.brand small{color:var(--mu);font-size:12px;direction:ltr;display:block;text-align:right;margin-top:4px}
+.nav,.pf{display:flex;align-items:baseline;justify-content:space-between;width:100%;background:none;border:0;border-inline-start:2px solid transparent;color:var(--mu);font:inherit;padding:5px 12px;cursor:pointer;text-align:start}
+.nav{font-size:15px}.pf{font-size:14px}
+.nav.on,.pf.on{color:var(--tx);border-inline-start-color:var(--tx);font-weight:700}
+.nav:hover,.pf:hover{color:var(--tx)}
+.cnt{font-size:12px;color:var(--mu);font-weight:400}
+.sh{font-size:12px;color:var(--mu);margin:30px 12px 8px}
+.main{padding:32px clamp(18px,4vw,56px);min-width:0;max-width:1100px}
+h1{font-size:30px;line-height:1.25;margin:0 0 6px;letter-spacing:-.015em}
+input,textarea,select{font:inherit;font-size:14px;background:transparent;color:var(--tx);border:1px solid var(--rule);border-radius:2px;padding:8px 10px;width:100%}
+input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--tx);outline-offset:2px}
+textarea{min-height:170px;resize:vertical;line-height:1.95}
+.card{border-top:2px solid var(--tx);margin-bottom:30px;padding-top:2px}
+.ch{padding:10px 0 6px;font-size:16px;font-weight:700;display:flex;justify-content:space-between;align-items:baseline}
+.cb{padding:4px 0 8px}
+.pill{font-size:12px;color:var(--mu);font-weight:400}
+.pill.g{color:var(--money);font-weight:700}.pill.w{color:var(--amber);font-weight:700}
+.btn{background:var(--inv);color:var(--invt);border:1px solid var(--inv);border-radius:2px;padding:9px 18px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.btn.o{background:transparent;color:var(--tx);border-color:var(--tx);font-weight:400}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:22px;border-bottom:1px solid var(--rule);margin-bottom:14px}
+.tabs button{border:0;border-bottom:2px solid transparent;background:none;color:var(--mu);font:inherit;padding:6px 0;margin-bottom:-1px;cursor:pointer}.tabs button.on{color:var(--tx);border-bottom-color:var(--tx);font-weight:700}
+.hd{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:26px;flex-wrap:wrap}
+.ring{flex:none}.ring svg{display:none}.ring div{display:flex;align-items:baseline;gap:6px;font-size:68px;font-weight:700;line-height:1;letter-spacing:-.03em}.ring small{font-size:14px;color:var(--mu);font-weight:400;letter-spacing:0}
+.info{display:grid;grid-template-columns:repeat(3,1fr);margin-bottom:30px;border-top:2px solid var(--tx);border-bottom:1px solid var(--rule)}.info div{padding:12px 0;border-bottom:1px solid var(--rule);padding-inline-end:14px}.info div:nth-last-child(-n+3){border-bottom:0}.info b{display:block;font-size:12px;color:var(--mu);font-weight:400}
+.cols{display:grid;grid-template-columns:1.6fr 1fr;gap:48px}.two{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.money{font-size:clamp(30px,4.6vw,46px);font-weight:700;color:var(--money);line-height:1.2;letter-spacing:-.02em}
+.li{display:flex;gap:10px;padding:4px 0;align-items:flex-start}.li:before{content:"";flex:none;width:5px;height:5px;background:var(--tx);margin-top:11px}
+.sv{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule)}.sv:last-child{border:0}
+.sr{padding:6px 0}.sr div{display:flex;justify-content:space-between}.sr i{display:block;height:3px;background:var(--tx);margin-top:4px}.sr em{font-style:normal;font-weight:700}
+.rw{display:grid;grid-template-columns:30px 1fr auto 56px;gap:18px;align-items:center;padding:16px 8px;border-bottom:1px solid var(--rule);cursor:pointer}.rw:first-child{border-top:2px solid var(--tx)}.rw:hover{background:var(--hover)}
+.rw b{font-size:17px}
+.mini{font-size:26px;font-weight:700;text-align:end;letter-spacing:-.02em}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:22px 0 30px;border-top:2px solid var(--tx)}.stats .card{margin:0;border:0;border-inline-end:1px solid var(--rule);padding:14px 0 0}.stats .card:last-child{border:0}.stats .card+.card{padding-inline-start:20px}.stats b{display:block;font-size:34px;line-height:1.2;letter-spacing:-.02em}
+.alert{border-inline-start:3px solid var(--amber);padding:6px 14px;margin-bottom:8px}
+.m{color:var(--mu);font-size:13px}
+a.bk{color:var(--mu);cursor:pointer;font-size:13px;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:860px){.app{grid-template-columns:1fr}.side{position:static;height:auto;border-inline-end:0;border-bottom:1px solid var(--rule);padding:18px}.cols,.two{grid-template-columns:1fr;gap:0}.info{grid-template-columns:1fr 1fr}.info div:nth-last-child(-n+3){border-bottom:1px solid var(--rule)}.stats{grid-template-columns:1fr}.stats .card{border-inline-end:0;border-bottom:1px solid var(--rule);padding:12px 0}.stats .card+.card{padding-inline-start:0}.main{padding:22px 18px}.rw{grid-template-columns:24px 1fr 46px;gap:12px}.rw .mn{display:none}.ring div{font-size:56px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="app"><aside class="side" id="side"></aside><main class="main" id="main"></main></div>
+<script>
+const SEC={construction:'إنشاءات',hotel:'ضيافة وفنادق',interior:'تشطيب وديكور',design:'تصميم هندسي',shipping:'توريد ولوجستيات',realestate:'عقار',tech:'تقنية',health:'صحي',sports:'رياضي'};
+const PROFILES=[
+{id:'tech',n:'تقني',tags:['tech'],pct:[.01,.03],svc:'حلول وتطوير تقني',need:'نظام إدارة وأتمتة وفوترة وتقارير',items:['تطوير نظام أو تطبيق مخصص','فوترة متوافقة مع زاتكا وإدارة العمليات','لوحات تقارير ومؤشرات أداء'],offer:'نقدم حلول وتطوير تقني (أنظمة، تطبيقات، ربط وفوترة متوافقة مع زاتكا) ونقدر ندعمكم بالجانب الرقمي للمشروع'},
+{id:'arch',n:'معماري',tags:['construction','design'],pct:[.005,.02],svc:'رسومات تنفيذية ومجسمات 3D',need:'مخططات تنفيذية ومجسمات وعروض للجهة',items:['رسومات تنفيذية (AutoCAD)','مجسمات 3D وعروض تقديمية','مراجعة المخططات قبل التسليم'],offer:'نقدم رسومات تنفيذية ومجسمات 3D وعروض تقديمية للجهة تسرّع التسليم وتقوّي ملفكم'},
+{id:'real',n:'عقاري',tags:['realestate','construction'],pct:[.01,.03],svc:'حلول عقارية للمشروع',need:'مكاتب وسكن عمال ومواقع تخزين قرب الموقع',items:['مكاتب موقع المشروع','سكن عمال','مواقع تخزين'],offer:'عندنا خيارات عقارية قريبة من موقع المشروع (مكاتب، سكن عمال، مواقع تخزين) جاهزة للإيجار'},
+{id:'doc',n:'طبي',tags:['health'],pct:[.005,.02],svc:'استشارات طبية وتشغيلية',need:'مراجعة المتطلبات الطبية والتشغيلية',items:['مراجعة المتطلبات الطبية','استشارات تشغيل ما بعد التسليم','تدريب الكوادر'],offer:'نقدم استشارات طبية ومراجعة المتطلبات الطبية والتشغيلية للمشروع'},
+{id:'coach',n:'رياضي',tags:['sports'],pct:[.01,.03],svc:'تشغيل وتدريب رياضي',need:'برامج تشغيل وكوادر رياضية',items:['برامج تدريب','كوادر ومدربين','تشغيل المنشأة الرياضية'],offer:'نقدم برامج تشغيل وتدريب وكوادر رياضية للمنشأة'},
+{id:'ship',n:'شحن',tags:['shipping'],pct:[.01,.04],svc:'شحن وتخليص جمركي',need:'استيراد معدات ومواد وتخليص جمركي',items:['شحن المعدات والمواد','تخليص جمركي','جدولة التوريد حسب مراحل المشروع'],offer:'نقدم شحن وتخليص جمركي للمعدات والمواد الموردة للمشروع بأسعار وجداول واضحة'},
+{id:'int',n:'ديكور داخلي',tags:['interior'],pct:[.02,.06],svc:'تصميم داخلي وتشطيب',need:'تصميم داخلي وتشطيبات وتأثيث',items:['تصميم داخلي','تنفيذ التشطيبات','توريد أثاث'],offer:'نقدم تصميم داخلي وتنفيذ تشطيبات وتأثيث للمشروع'},
+{id:'fit',n:'تجهيز فنادق وقاعات',tags:['hotel'],pct:[.02,.06],svc:'تجهيز فنادق وقاعات',need:'تجهيز الموقع قبل الافتتاح (أثاث، ستائر، إضاءة)',items:['تجهيز غرف وقاعات','ستائر وإضاءة','نزول الموقع والتسليم بالوقت'],offer:'نجهّز الموقع قبل الافتتاح (أثاث، ستائر، إضاءة، تجهيز قاعات) مع نزول للموقع وتسليم بالوقت'}
+];
+const DEMO=[
+{id:1,no:'DEMO-2026-240101',city:'الرياض',months:30,co:'شركة الأفق للمقاولات',pr:'إنشاء فندق 5 نجوم',en:'هيئة تطوير (تجريبي)',v:120,ago:0,tags:['construction','hotel','interior','design','shipping','realestate']},
+{id:2,no:'DEMO-2026-240102',city:'جدة',months:18,co:'شركة نماء التقنية',pr:'منصة خدمات رقمية لجهة حكومية',en:'وزارة (تجريبي)',v:18,ago:1,tags:['tech']},
+{id:3,no:'DEMO-2026-240103',city:'الدمام',months:36,co:'مجموعة الريف الإنشائية',pr:'مجمع سكني 400 وحدة',en:'صندوق عقاري (تجريبي)',v:85,ago:3,tags:['construction','realestate','design','interior','shipping']},
+{id:4,no:'DEMO-2026-240104',city:'الرياض',months:24,co:'شركة الرعاية المتكاملة',pr:'مركز طبي تخصصي',en:'قطاع صحي (تجريبي)',v:60,ago:2,tags:['health','construction','interior','shipping']},
+{id:5,no:'DEMO-2026-240105',city:'أبها',months:12,co:'شركة ميدان للمرافق',pr:'صالة رياضية وملعب متعدد',en:'أمانة (تجريبي)',v:30,ago:1,tags:['sports','construction']},
+{id:6,no:'DEMO-2026-240106',city:'الرياض',months:20,co:'شركة الواحة للفعاليات',pr:'مركز مؤتمرات ومعارض',en:'هيئة سياحة (تجريبي)',v:45,ago:0,tags:['hotel','interior','design','shipping']},
+{id:7,no:'DEMO-2026-240107',city:'الخبر',months:14,co:'شركة سيف للتوريدات',pr:'توريد معدات ثقيلة للبنية التحتية',en:'شركة مياه (تجريبي)',v:25,ago:4,tags:['shipping']},
+{id:8,no:'DEMO-2026-240108',city:'الرياض',months:36,co:'شركة رقمنة الحلول',pr:'نظام إدارة وفوترة إلكترونية',en:'جهة حكومية (تجريبي)',v:9,ago:2,tags:['tech']}
+];
+const KW=[['فندق|منتجع',['hotel','interior','construction','design','shipping']],['إنشاء|مبنى|مجمع|بناء|طريق',['construction','design','shipping']],['سكن|سكني|عقار',['realestate','construction']],['نظام|رقمي|تقني|منصة|تطبيق|برمج',['tech']],['صح|طبي|مستشفى',['health','construction','interior']],['رياض|ملعب|نادي|صالة',['sports','construction']],['توريد|معدات|مواد',['shipping']],['مؤتمرات|معارض|قاعات',['hotel','interior','design']],['تشغيل|صيانة',['tech']]];
+const STAGES=['جديدة','تم التواصل','متابعة 1','متابعة 2','أُغلقت (ربحناها)','أُغلقت (ما صارت)'];
+const ld=(k,d)=>{try{const x=localStorage.getItem(k);return x?JSON.parse(x):d}catch(e){return d}};
+let LEADS=ld('leads',DEMO),S=ld('ld',{}),me=ld('me',''),cur=ld('cur','ship'),view='home',sel=null,CH='wa',W=ld('watch',{});
+const save=()=>{try{['ld','me','cur','leads','watch'].forEach((k,i)=>localStorage.setItem(k,JSON.stringify([S,me,cur,LEADS,W][i])))}catch(e){}};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const P=()=>PROFILES.find(p=>p.id===cur);
+const hit=(l,p)=>l.tags.filter(t=>p.tags.includes(t)).length;
+const fmt=x=>x>=1e6?(x/1e6).toFixed(1)+' مليون':Math.round(x/1000).toLocaleString('en-US')+' ألف';
+const money=(l,p)=>fmt(l.v*1e6*p.pct[0])+' – '+fmt(l.v*1e6*p.pct[1])+' ريال';
+const parts=(l,p)=>[['تطابق خدمتك مع المشروع',Math.min(3,hit(l,p))*15],['قيمة العقد ('+l.v+' مليون)',Math.min(25,Math.round(l.v/5))],['حداثة الترسية',l.ago<=1?20:l.ago<=3?10:4]];
+const score=(l,p)=>Math.min(98,20+parts(l,p).reduce((a,x)=>a+x[1],0));
+const lst=()=>{const p=P();return LEADS.filter(l=>hit(l,p)>0).map(l=>({...l,sc:score(l,p)})).sort((a,b)=>b.sc-a.sc)};
+const who=()=>me||'[اسمك]';
+const ago=l=>l.ago==0?'اليوم':l.ago==1?'أمس':'قبل '+l.ago+' أيام';
+function msg(l,p,st,ch){const o=p.offer;
+ if(ch=='em'){
+  if(st<=1)return `الموضوع: تهنئة بترسية «${l.pr}» وفرصة تعاون\n\nالسادة الكرام في ${l.co}،\n\nمبروك فوزكم بمشروع «${l.pr}» (${l.en}).\n\n${o}.\n\nيسعدنا نرسل لكم نبذة عن أعمالنا السابقة، ونقترح مكالمة قصيرة (١٠ دقائق) هذا الأسبوع.\n\nمع التحية،\n${who()}`;
+  if(st==2)return `الموضوع: متابعة بخصوص «${l.pr}»\n\nالسادة الكرام،\n\nأتابع رسالتي السابقة. إذا فيه جزء من المشروع تبون تخففون حمله عن فريقكم، نقدر نبدأ بدفعة صغيرة تجريبية.\n\nيناسبكم موعد هذا الأسبوع؟\n\nمع التحية،\n${who()}`;
+  return `الموضوع: متابعة أخيرة - «${l.pr}»\n\nالسادة الكرام،\n\nهذي آخر متابعة مني. إذا الوقت غير مناسب فلا إشكال، وتواصلي متاح متى احتجتم. موفقين بالتنفيذ.\n\n${who()}`}
+ if(st<=1)return `السلام عليكم ورحمة الله،\nمبروك على ترسية «${l.pr}».\n${o}.\nأرسل لكم نبذة وأعمال سابقة؟ ومتى يناسبكم اتصال ١٠ دقائق؟\n${who()}`;
+ if(st==2)return `السلام عليكم،\nأتابع معكم بخصوص «${l.pr}». نقدر نبدأ بدفعة صغيرة تجريبية بدون التزام كبير.\nيناسبكم نتكلم هذا الأسبوع؟\n${who()}`;
+ return `السلام عليكم،\nآخر متابعة مني بخصوص «${l.pr}». إذا الوقت غير مناسب ما فيه إشكال، وتواصلي متاح لاحقاً. موفقين.\n${who()}`}
+const TIPS=l=>['ابدأ بسؤال مو بعرض: "وش أكثر جزء بالمشروع تحسونه ضاغط عليكم؟" ثم اربط خدمتك بجوابه.','اذكر شي محدد عن «'+l.pr+'» عشان يعرف إنها مو رسالة منسوخة.','اقترح خطوة صغيرة (تجربة أو دفعة أولى) بدل الصفقة الكاملة.','لا تنزّل سعرك أول ما يعترض. اسأل "مقارنة بإيش؟" ثم أضف قيمة (سرعة، ضمان، متابعة) بدل الخصم.','اختم كل اتصال بموعد الخطوة الجاية، مثل "أرسل العرض بكرة الظهر".'];
+function go(v,id){view=v;sel=id||null;draw();window.scrollTo(0,0)}
+function pick(id){cur=id;save();if(view=='detail')view='leads';draw()}
+function setSt(id,v){S[id]=S[id]||{};S[id].s=+v;if(+v>=1&&!S[id].t)S[id].t=Date.now();save();draw()}
+function watch(id){W[id]=!W[id];save();draw()}
+function cp(b){const t=$('msg');t.select();try{navigator.clipboard.writeText(t.value).catch(()=>document.execCommand('copy'))}catch(e){document.execCommand('copy')}b.textContent='تم النسخ ✓';setTimeout(()=>b.textContent='نسخ الرسالة',1500)}
+function nph(x){let d=String(x||'').replace(/\D/g,'');if(d.startsWith('00'))d=d.slice(2);if(d.startsWith('0'))d='966'+d.slice(1);else if(d.length==9&&d[0]=='5')d='966'+d;return d}
+function setPh(id,v){S[id]=S[id]||{};S[id].ph=v;save()}
+function sendWa(id){const v=$('ph').value;setPh(id,v);window.open('https://wa.me/'+nph(v)+'?text='+encodeURIComponent($('msg').value),'_blank');approve(id)}
+function sendMail(id){const v=$('msg').value,m=v.match(/^الموضوع:\s*(.*)\n\n([\s\S]*)$/);window.open('mailto:?subject='+encodeURIComponent(m?m[1]:'')+'&body='+encodeURIComponent(m?m[2]:v),'_blank');approve(id)}
+function approve(id){const st=(S[id]||{}).s||0;if(st<1)setSt(id,1);else draw()}
+function ring(sc,s){const r=52,c=2*Math.PI*r;return `<svg width="${s}" height="${s}" viewBox="0 0 120 120"><circle cx="60" cy="60" r="${r}" fill="none" stroke="var(--bd)" stroke-width="8"/><circle cx="60" cy="60" r="${r}" fill="none" stroke="var(--ac)" stroke-width="8" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-sc/100)}"/></svg>`}
+function dur(t){const m=String(t||'').match(/(\d+)\s*(شهر|أشهر|اشهر|سنة|سنوات|سنه|يوم|أيام)/);if(!m)return '-';const n=+m[1];return /سن/.test(m[2])?n*12:/يوم|أيام/.test(m[2])?Math.max(1,Math.ceil(n/30)):n}
+function tagsOf(t){const tg=[];KW.forEach(k=>{if(new RegExp(k[0]).test(t||''))k[1].forEach(x=>{if(!tg.includes(x))tg.push(x)})});return tg}
+function doImp(){try{let a=JSON.parse($('impt').value);if(!Array.isArray(a)||!a.length)throw 0;
+ const ap=a.some(x=>'award_status' in x||'tender_name' in x);let skipped=0;
+ if(ap){a=a.filter(x=>{const ok=x.awarded_supplier&&x.award_status!=='not_announced';if(!ok)skipped++;return ok});if(!a.length){$('impm').textContent='ما فيه ولا منافسة مرساة بالملف ('+skipped+' غير معلنة). زِد maxItems بالسحب.';return}
+  a=a.map(x=>({co:x.awarded_supplier,pr:x.tender_name,en:x.agency_name,v:(parseFloat(String(x.awarded_value||0).replace(/,/g,''))||0)/1e6,no:x.reference_number,city:x.execution_place,months:dur(x.execution_duration),url:x.tender_url,tags:tagsOf((x.tender_name||'')+' '+(x.tender_activity||''))}))}
+ LEADS=a.map((x,i)=>({id:i+1,no:x.no||'-',city:x.city||'-',months:x.months||'-',co:x.co||'؟',pr:x.pr||'؟',en:x.en||'-',v:+x.v||0,ago:x.ago==null?1:+x.ago,phone:x.phone||'',url:x.url||'',tags:x.tags&&x.tags.length?x.tags:tagsOf(x.pr)}));
+ S={};W={};save();$('impm').textContent='تم استيراد '+LEADS.length+' فرصة'+(skipped?' (تجاهلت '+skipped+' منافسة غير مرساة)':'')+' ✓'}catch(e){$('impm').textContent='الصيغة غير صحيحة'}}
+function fileImp(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{$('impt').value=r.result;doImp()};r.readAsText(f)}
+function resetImp(){LEADS=DEMO;S={};W={};save();$('impm').textContent='رجعنا للبيانات التجريبية'}
+function sideH(){const all=lst().length;
+ const nv=(v,t,c)=>`<button class="nav ${view==v||(v=='leads'&&view=='detail')?'on':''}" onclick="go('${v}')"><span>${t}</span>${c!=null?`<span class="cnt">${c}</span>`:''}</button>`;
+ return `<div class="brand"><b>محرك فرص اعتماد</b><small>Etimad Opportunity Engine</small></div><div style="height:14px"></div>`+
+ nv('home','الرئيسية',all)+nv('leads','الفرص',all)+nv('watch','قائمة المراقبة',Object.values(W).filter(Boolean).length)+nv('import','استيراد البيانات')+
+ `<div class="sh">تخصصي (من يشتغل؟)</div>`+PROFILES.map(p=>`<button class="pf ${p.id===cur?'on':''}" onclick="pick('${p.id}')"><span>${p.n}</span><span class="cnt">${LEADS.filter(l=>hit(l,p)>0).length}</span></button>`).join('')+
+ `<div class="sh">اسمك (يطلع بالرسائل)</div><input id="me" value="${esc(me)}" placeholder="الاسم" oninput="me=this.value;save()">`+
+ `<div class="m" style="margin:14px 10px">● وضع العرض التجريبي: الأسماء والأرقام وهمية. ميزانية الصفقة تقدير تقريبي.</div>`}
+function rowH(l,i){const p=P(),st=(S[l.id]||{}).s||0;
+ return `<div class="rw" onclick="go('detail',${l.id})"><div class="m">#${i+1}</div><div><b>${esc(l.co)}</b><div class="m">${esc(l.pr)}، ${esc(l.city)}، ${ago(l)}</div><span class="pill ${st?'g':''}">${STAGES[st]}</span></div><div class="mn" style="text-align:end"><div class="m">ميزانية متوقعة</div><b style="color:var(--ac)">${money(l,p)}</b></div><div class="mini">${l.sc}</div></div>`}
+function homeH(){const ls=lst(),p=P(),al=[];let late=0,tot=0;
+ ls.forEach(l=>{const s=S[l.id]||{s:0};tot+=l.v*1e6*(p.pct[0]+p.pct[1])/2;
+  if(s.s==0&&l.ago<=1)al.push(`فرصة جديدة: ${esc(l.co)} (${esc(l.pr)})`);
+  if(s.s>=1&&s.s<4&&s.t&&(Date.now()-s.t)/864e5>=2){late++;al.push(`متابعة متأخرة: ${esc(l.co)}، تواصلت من أكثر من يومين وما تابعت`)}});
+ return `<h1>أقوى الفرص اليوم</h1><div class="m" style="margin-bottom:14px">${p.n}، ${p.svc}</div><div class="stats"><div class="card"><span class="m">فرص جديدة اليوم</span><b>${ls.filter(l=>l.ago<=1&&!(S[l.id]||{}).s).length}</b></div><div class="card"><span class="m">متابعات متأخرة</span><b>${late}</b></div><div class="card"><span class="m">إجمالي الميزانية المتوقعة (وسطي)</span><b>${fmt(tot)}</b></div></div>`+al.map(a=>`<div class="alert">${a}</div>`).join('')+`<div class="card">${ls.slice(0,5).map(rowH).join('')||'<div class="cb m">لا فرص حالياً</div>'}</div>`}
+function detH(){const p=P(),ls=lst(),i=ls.findIndex(x=>x.id===sel);if(i<0)return listH();const l=ls[i],st=(S[l.id]||{}).s||0,tot=ls.length;
+ const sc=l.sc,badge=sc>=80?'فرصة قوية':sc>=65?'فرصة جيدة':'فرصة متوسطة';
+ const others=PROFILES.filter(o=>o.id!==p.id&&hit(l,o)>0).slice(0,3);
+ return `<a class="bk" onclick="go('leads')">رجوع</a> <span class="m">/ ${esc(l.co)}</span>
+ <div class="hd" style="margin-top:12px"><div class="row" style="gap:16px"><div class="ring">${ring(sc,96)}<div>${sc}<small>/100</small></div></div><div><div class="row"><span class="pill g">${badge}</span><span class="m">#${i+1} من ${tot} فرصة</span><span class="pill w">تجريبي</span></div><h1>${esc(l.co)}</h1><div class="m">${esc(l.pr)}، ${l.v} مليون ريال، ${esc(l.city)}</div></div></div>
+ <div class="row"><select onchange="setSt(${l.id},this.value)" style="width:150px">${STAGES.map((x,k)=>`<option value="${k}" ${k===st?'selected':''}>${x}</option>`).join('')}</select><button class="btn o" onclick="watch(${l.id})">${W[l.id]?'✓ بالمراقبة':'+ أضف للمراقبة'}</button></div></div>
+ <div class="card info"><div><b>اسم الشركة</b>${esc(l.co)}</div><div><b>اسم المشروع</b>${esc(l.pr)}</div><div><b>رقم المنافسة</b><span style="direction:ltr;display:inline-block">${esc(l.no)}</span></div><div><b>الجهة</b>${esc(l.en)}</div><div><b>المدينة</b>${esc(l.city)}</div><div><b>قيمة الترسية</b>${(l.v*1e6).toLocaleString('en-US')} ريال</div><div><b>القطاع</b>${l.tags.slice(0,2).map(t=>SEC[t]).join('، ')}</div><div><b>مدة العقد</b>${l.months} شهر</div><div><b>تاريخ الترسية</b>${ago(l)}</div></div>
+ <div class="cols"><div>
+  <div class="card"><div class="ch">ميزانية الصفقة المتوقعة لك <span class="pill">تقدير</span></div><div class="cb"><div class="money">${money(l,p)}</div><div class="m">تقدير تقريبي (${p.pct[0]*100}% – ${p.pct[1]*100}% من قيمة العقد)، مو وعد.</div></div></div>
+  <div class="card"><div class="ch">ليش هذه فرصة؟</div><div class="cb">${esc(l.co)} فازت بمشروع «${esc(l.pr)}» بقيمة ${l.v} مليون ريال لمدة ${l.months} شهر. هذا النوع من المشاريع يحتاج دعم من موردين ومقاولين وخدمات. الترسية ${ago(l)}، ${l.ago<=1?'يعني الشركة بمرحلة التجهيز واختيار الأدوات — أفضل توقيت للتواصل.':'فالأفضل تتواصل بأسرع وقت قبل لا تثبّت مورديها.'}</div></div>
+  <div class="card"><div class="ch">ليش هذه الشركة مناسبة لخدمتك؟</div><div class="cb"><div class="li">أنت تقدم ${p.svc} — والمشروع يحتاج: ${p.need}</div><div class="li">الجهة (${esc(l.en)}) تفرض التزام بوقت محدد، فالشركة تبحث عن موردين جاهزين</div><div class="li">قيمة العقد (${l.v} مليون) تسمح بميزانية للخدمات الجانبية</div></div></div>
+  <div class="two"><div class="card"><div class="ch">الخدمات المحتمل يبيعها لهم</div><div class="cb">${p.items.map(x=>`<div class="sv"><span>${x}</span><span class="pill g">ضمن خدماتك</span></div>`).join('')}${others.map(o=>`<div class="sv"><span>${o.svc}</span><span class="pill">خارج خدماتك، ${o.n}</span></div>`).join('')}</div></div>
+  <div class="card"><div class="ch">سبب الدرجة <span class="m">Lead Score: ${sc}</span></div><div class="cb"><div class="sr"><div><span>أساس</span><em>+20</em></div></div>${parts(l,p).map(x=>`<div class="sr"><div><span>${x[0]}</span><em>+${x[1]}</em></div><i style="width:${Math.min(100,x[1]*3.5)}%"></i></div>`).join('')}</div></div></div>
+ </div><div>
+  <div class="card"><div class="ch">رسالة تواصل مقترحة<span class="pill">قواعد</span></div><div class="cb"><div class="tabs"><button class="${CH=='wa'?'on':''}" onclick="CH='wa';draw()">WhatsApp</button><button class="${CH=='em'?'on':''}" onclick="CH='em';draw()">Email</button></div>
+   <textarea id="msg">${esc(msg(l,p,st,CH))}</textarea><input id="ph" value="${esc((S[l.id]||{}).ph||l.phone||'')}" placeholder="رقم واتساب الشركة (اختياري) مثل 0551234567" onchange="setPh(${l.id},this.value)" style="margin-top:10px"><div class="row" style="margin-top:10px">${CH=='wa'?`<button class="btn" onclick="sendWa(${l.id})">فتح واتساب وإرسال</button>`:`<button class="btn" onclick="sendMail(${l.id})">فتح الإيميل</button>`}<button class="btn o" onclick="cp(this)">نسخ الرسالة</button></div>
+   <div class="m" style="margin-top:8px">الزر يفتح واتساب (أو الإيميل) والرسالة جاهزة، وأنت تضغط إرسال بنفسك. لا يتم إرسال شي تلقائياً. بعد الضغط تتحول الحالة لـ "تم التواصل" ويشتغل تذكير المتابعة.</div></div></div>
+  <div class="card"><div class="ch">كيف تتواصل؟</div><div class="cb">${l.url?`<div class="li"><a href="${esc(l.url)}" target="_blank" rel="noopener" style="color:var(--ac)">افتح المنافسة في اعتماد</a></div>`:''}<div class="li">ابحث عن الشركة (موقعها وLinkedIn) وحدد مدير المشاريع أو المشتريات</div><div class="li">أرسل الرسالة خلال أول ٤٨ ساعة من الترسية</div><div class="li">إذا ما ردوا، المتابعة الأولى بعد يومين، والثانية بعد أسبوع</div></div></div>
+  <div class="card"><div class="ch">نصائح تفاوض</div><div class="cb">${TIPS(l).map(t=>`<div class="li">${t}</div>`).join('')}</div></div>
+ </div></div>`}
+function listH(){const ls=lst();return `<h1>الفرص</h1><div class="m" style="margin-bottom:14px">${P().n}، مرتبة حسب الدرجة</div><div class="card">${ls.map(rowH).join('')||'<div class="cb m">ما فيه فرص مناسبة لهذا التخصص.</div>'}</div>`}
+function watchH(){const ls=lst().filter(l=>W[l.id]);return `<h1>قائمة المراقبة</h1><div class="m" style="margin-bottom:14px">الفرص اللي أضفتها من صفحة الفرصة</div><div class="card">${ls.map(rowH).join('')||'<div class="cb m">فاضية. افتح فرصة واضغط "أضف للمراقبة".</div>'}</div>`}
+function impH(){return `<h1>استيراد البيانات</h1><div class="m" style="margin-bottom:14px">الصق مصفوفة JSON من الترسيات الحقيقية. التصنيف حسب كلمات اسم المشروع يتم تلقائياً.</div><div class="card"><div class="cb"><div class="m" style="margin-bottom:8px">يقبل مخرجات Apify لسحب اعتماد مباشرة (ياخذ المرساة بس)، أو الصيغة اليدوية. ارفع الملف:</div><input type="file" accept=".json,application/json" onchange="fileImp(this)" style="margin-bottom:12px"><div class="m" style="margin-bottom:8px">أو الصق/اكتب بالصيغة اليدوية. الحقول: co (الشركة)، pr (المشروع)، en (الجهة)، v (القيمة بالمليون ريال). اختياري: no، city، months، ago (كم يوم من الترسية)، phone (واتساب الشركة).</div><textarea id="impt" placeholder='[{"co":"شركة كذا","pr":"إنشاء فندق","en":"أمانة","v":50,"no":"123","city":"الرياض","months":24,"ago":0}]'></textarea><div class="row" style="margin-top:10px"><button class="btn" onclick="doImp()">استيراد</button><button class="btn o" onclick="resetImp()">رجوع للبيانات التجريبية</button><span class="m" id="impm"></span></div></div></div>`}
+function draw(){const a=document.activeElement&&document.activeElement.id=='me';$('side').innerHTML=sideH();
+ $('main').innerHTML=({home:homeH,leads:listH,detail:detH,watch:watchH,import:impH}[view])();
+ if(a){const e=$('me');e.focus();e.setSelectionRange(e.value.length,e.value.length)}}
+draw();
+</script>
+</body>
+</html>
